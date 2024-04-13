@@ -22,6 +22,6 @@ export const sidebarLinks = [
     {
         label: 'Personal Room',
         route: '/personal-room',
-        icon: '/icons/personal.svg',
+        icon: '/icons/add-personal.svg',
     }
 ];
