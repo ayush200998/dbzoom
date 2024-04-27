@@ -1,3 +1,4 @@
+import MeetingTypesList from '@/components/ui/MeetingTypesList';
 import React from 'react'
 
 const Home = () => {
@@ -16,7 +17,7 @@ const Home = () => {
   return (
     <section className='flex size-full flex-col gap-10 text-white'>
         <div className='h-[300px] w-full rounded-[20px] bg-hero bg-cover'>
-          <div className='flex flex-col justify-between h-full max-md:px-5 max-md:py-8 lg:p-11'>
+          <div className='flex flex-col justify-between h-full p-5 max-md:px-5 max-md:py-8 lg:p-11'>
             <h2 className='glassmorphism max-w-[270px] rounded py-2 text-center text-base font-normal'>
               Upcoming meeting at: 11:30pm
             </h2>
@@ -32,6 +33,8 @@ const Home = () => {
             </div>
           </div>
         </div>
+
+      <MeetingTypesList />
     </section>
   )
 }

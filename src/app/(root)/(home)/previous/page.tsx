@@ -1,3 +1,4 @@
+import CallLists from '@/components/ui/CallLists'
 import React from 'react'
 
 const Personal = () => {
@@ -6,6 +7,8 @@ const Personal = () => {
         <h1 className='text-3xl font-bold'>
             Personal
         </h1>
+
+        <CallLists type='ended' />
     </section>
   )
 }

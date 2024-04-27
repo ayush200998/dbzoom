@@ -45,7 +45,7 @@ const MobileNav = () => {
                 >
                     <Image 
                         src='/icons/logo.svg'
-                        alt='Db Zoom'
+                        alt='Room'
                         width={32}
                         height={32}
                         className='max-sm:size-10'

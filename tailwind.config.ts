@@ -22,12 +22,26 @@ const config = {
         dark: {
           1: '#1C1F2E',
           2: '#161925',
+          3: '#19232D',
+          4: '#4C535B',
         },
         blue: {
           1: '#0E78F9',
+          2: '#1035AC'
         },
         sky: {
           1: '#C9DDFF',
+        },
+        mustard: {
+          1: '#e3ae01',
+          2: '#CC7722',
+          3: '#C49102',
+        },
+        lavendar: {
+          1: '#C77DFF',
+        },
+        rose: {
+          1: '#C154C1',
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

@@ -1,8 +1,45 @@
-import React from 'react'
+'use client'
 
-const page = ({ params }: { params: { id: string }}) => {
+import MeetingRoom from '@/components/ui/MeetingRoom';
+import MeetingSetup from '@/components/ui/MeetingSetup';
+import { useUser } from '@clerk/nextjs'
+import { StreamCall, StreamTheme } from '@stream-io/video-react-sdk';
+import React, { useState } from 'react'
+import { useGetCallId } from '../../../../../hooks/useGetCallId';
+import Loader from '@/components/ui/Loader';
+import { useRouter } from 'next/navigation';
+
+const page = ({ params: { id } }: { params: { id: string }}) => {
+  const { user, isLoaded } = useUser();
+  const router = useRouter();
+  
+  const [isSetupCompleted, setIsSetupCompleted] = useState(false);
+
+  const { call, isCallLoading } = useGetCallId(id);
+
+  if (!user && isLoaded) {
+    router.push('/recordings');
+  }
+
+  if (!isLoaded || isCallLoading) return <Loader />
+
   return (
-    <div>Meeting Room #{params.id}</div>
+    <main
+      id='meeting-page-container'
+      className='h-screen w-full'
+    >
+      <StreamCall call={call}>
+        <StreamTheme>
+          {isSetupCompleted ? (
+            <MeetingRoom />
+          ) : (
+            <MeetingSetup
+              setIsSetupCompleted={setIsSetupCompleted}
+            />
+          )}
+        </StreamTheme>
+      </StreamCall>
+    </main>
   )
 }
 
