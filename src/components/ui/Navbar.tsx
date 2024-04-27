@@ -26,16 +26,18 @@ const Navbar = () => {
             </p>
         </Link>
 
-        <div
-            id='user-settings'
-            className='flex-between gap-5'
-        >
-            <SignedIn>
-                <UserButton /> 
-            </SignedIn>
-        </div>
+        <div className='flex items-center gap-3'>
+            <div
+                id='user-settings'
+                className='flex-between gap-5'
+            >
+                <SignedIn>
+                    <UserButton /> 
+                </SignedIn>
+            </div>
 
-        <MobileNav />
+            <MobileNav />
+        </div>
     </nav>
   )
 }

@@ -58,7 +58,7 @@ const MeetingRoom = () => {
         className='h-screen relative w-full overflow-hidden pt-4 text-white'
     >
         <div
-            className='relative size-full flex items-center justify-center flex-wrap'
+            className='relative size-full flex items-center justify-center'
         >
             <div
                 className='flex size-full max-w-[1000px] items-center'
@@ -76,7 +76,7 @@ const MeetingRoom = () => {
         </div>
 
         <div
-            className='fixed bottom-0 flex justify-center items-center w-full gap-5'
+            className='fixed bottom-0 flex justify-center items-center w-full gap-5 flex-wrap'
         >
             <CallControls onLeave={() => router.push('/')} />
 
